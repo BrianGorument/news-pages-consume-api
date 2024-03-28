@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* CSS untuk efek skeleton loading */
+.skeleton-loader {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.5s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* CSS untuk daftar berita */
+.news-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* CSS untuk gambar */
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+</head>
+<body>
+
+<h1>Daftar Berita</h1>
+
+<!-- Daftar berita dengan efek skeleton loading -->
+<div class="news-list">
+  <!-- Item 1 -->
+  <div class="skeleton-loader news-item"></div>
+  
+  <!-- Item 2 -->
+  <div class="skeleton-loader news-item"></div>
+  
+  <!-- Item 3 -->
+  <div class="skeleton-loader news-item"></div>
+  
+  <!-- Item 4 -->
+  <div class="skeleton-loader news-item"></div>
+  
+  <!-- Item 5 -->
+  <div class="skeleton-loader news-item"></div>
+</div>
+
+<script>
+// Contoh penundaan untuk mensimulasikan waktu pengambilan data
+setTimeout(() => {
+  // Hapus kelas skeleton-loader setelah data selesai dimuat
+  const skeletonLoaders = document.querySelectorAll('.skeleton-loader');
+  skeletonLoaders.forEach(loader => {
+    loader.classList.remove('skeleton-loader');
+  });
+}, 2000); // Ubah nilai 2000 menjadi waktu yang sesuai dengan waktu nyata pengambilan data
+</script>
+
+</body>
+</html>
