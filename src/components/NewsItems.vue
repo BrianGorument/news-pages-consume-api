@@ -1,16 +1,21 @@
 <template>
-  <div class="grid-container">
-    <div class="image">
-        <img :src="article.urlToImage" alt="News Image">
-    </div>
-        <div class="news-item"></div>
-            <h3>{{ article.title }}</h3>
-            <h3>Name : {{ article.source.name }}</h3>
-            <p>{{ article.description }}</p>
-            <p>Author: {{ article.author }}</p>
-            <a :href="article.url" target="_blank">click here to Read more :</a>
-            <p>{{ formattedDate }}</p>
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 px-0">
+                        <img class="img-fluid h-100" :src="article.urlToImage" style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                              <h3>{{ article.title }}</h3>
+                              <h3>Name : {{ article.source.name }}</h3>
+                              <a :href="article.url" target="_blank">click here to Read more :</a> 
+                              <p>{{ article.description }}</p>
+                              <p>Author: {{ article.author }}</p>
+                              <p>{{ formattedDate }}</p>
+                            </div>
+                         </div>
+            </div>
         </div>
+    </div>
 </template>
   
   <script>
@@ -38,6 +43,27 @@ img {
   max-width: 500px;
   max-height: 500px;
   height: auto;
+}
+
+
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  
 }
 
 </style>

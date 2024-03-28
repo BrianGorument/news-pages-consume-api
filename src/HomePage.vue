@@ -1,8 +1,11 @@
 <template>
   <div class="home">
+    <div class="background"></div>
     <!-- Input pencarian -->
-    <input type="text" v-model="searchQuery" @input="searchNews" placeholder="Cari berita...">
-    
+      <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
+        <input type="text" v-model="searchQuery" @input="searchNews" placeholder="Cari berita...">
+     </div>
+
     <!-- Daftar berita -->
     <div class="news-list">
       <NewsItem v-for="(article, index) in filteredArticles" :key="index" :article="article" />
@@ -71,5 +74,17 @@
 .news-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/background.jpg');
+  background-size: cover;
+  filter: blur(350px);
+  z-index: -1;
 }
 </style>
